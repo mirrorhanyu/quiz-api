@@ -1,7 +1,7 @@
 from quiz_context.application.quiz_create_command import QuizCreateCommand
 from quiz_context.domain.model.quiz import Quiz
 from quiz_context.domain.model.quiz_option import QuizOption
-from quiz_context.infrastructure.quiz_repository import save
+from quiz_context.infrastructure.quiz_repository import save, query
 
 
 def create_quiz(quiz_create_command: QuizCreateCommand):
@@ -14,3 +14,7 @@ def create_quiz(quiz_create_command: QuizCreateCommand):
         correct=option.get('correct'),
     ) for option in quiz_create_command.options]
     save(quiz, quiz_options)
+
+
+def get_quiz(quiz_id: int):
+    return query(quiz_id)
