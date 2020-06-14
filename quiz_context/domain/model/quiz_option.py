@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
 
-from quiz_context.domain.shared.base import Base
+from common.infrastucture.shared.base import Base
 
 
 class QuizOption(Base):

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
-from quiz_context.domain.shared.base import Base
+from common.infrastucture.shared.base import Base
 
 
 class Quiz(Base):
