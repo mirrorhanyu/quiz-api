@@ -5,6 +5,7 @@ from exam_context.infrastructure.exam_repository import save
 
 def create_exam(exam_create_command: ExamCreateCommand):
     exam = Exam(
+        name=exam_create_command.name,
         quizzes=exam_create_command.quizzes
     )
     save(exam)

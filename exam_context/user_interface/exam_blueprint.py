@@ -10,6 +10,7 @@ exam_blueprint = Blueprint('exam', __name__)
 def create():
     payload = request.json
     exam_create_command = ExamCreateCommand(
+        name=payload.get('name'),
         quizzes=payload.get('quizzes'),
     )
     create_exam(exam_create_command)
